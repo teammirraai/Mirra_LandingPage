@@ -37,7 +37,7 @@ export async function login(_prevState: LoginState, formData: FormData): Promise
   // in the root .env). It's a stronger gate than "brand name as its own
   // password" used before, but it's still one secret shared across every
   // brand partner, backstopped by the OTP step below as a second factor.
-  // Treat leaking this password the same as leaking the /Brand URL itself.
+  // Treat leaking this password the same as leaking the /brand URL itself.
   if (passwordInput !== getSharedPassword()) {
     return { step: "credentials", brand: null, error: "Brand and password do not match." };
   }
@@ -116,7 +116,7 @@ export async function verifyOtp(prevState: LoginState, formData: FormData): Prom
   });
   cookieStore.delete(OTP_PENDING_COOKIE_NAME);
 
-  redirect("/Brand");
+  redirect("/brand");
 }
 
 /**
@@ -135,7 +135,7 @@ export async function logout(): Promise<void> {
   const cookieStore = await cookies();
   cookieStore.delete(SESSION_COOKIE_NAME);
   cookieStore.delete(OTP_PENDING_COOKIE_NAME);
-  redirect("/Brand");
+  redirect("/brand");
 }
 
 export interface DeleteProductResult {
@@ -157,6 +157,6 @@ export async function deleteProduct(id: number): Promise<DeleteProductResult> {
     return { error: err instanceof Error ? err.message : "Failed to delete item." };
   }
 
-  revalidatePath("/Brand");
+  revalidatePath("/brand");
   return { error: null };
 }

@@ -13,7 +13,7 @@ function buildHref(page: number, category: string | null, subCategory: string | 
   if (subCategory) params.set("subCategory", subCategory);
   if (page > 1) params.set("page", String(page));
   const query = params.toString();
-  return query ? `/Brand?${query}` : "/Brand";
+  return query ? `/brand?${query}` : "/brand";
 }
 
 /** Page numbers to render, with "..." gaps for large ranges. */

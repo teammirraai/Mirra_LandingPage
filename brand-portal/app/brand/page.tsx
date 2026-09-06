@@ -8,10 +8,10 @@ import {
 import { LoginForm } from "./login-form";
 import { Dashboard } from "./dashboard";
 
-// This route (/Brand) is a standalone, unlinked internal tool for brand
+// This route (/brand) is a standalone, unlinked internal tool for brand
 // partners. It is intentionally not referenced from anywhere else in this
 // project — see brand-portal/README.md.
-export default async function BrandPage(props: PageProps<"/Brand">) {
+export default async function BrandPage(props: PageProps<"/brand">) {
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
   const brand = await verifySessionToken(token);

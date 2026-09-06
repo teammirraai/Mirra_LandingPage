@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/brand", "destination": "https://mirra-brand-portal.vercel.app/brand" },
+    { "source": "/brand/:path*", "destination": "https://mirra-brand-portal.vercel.app/brand/:path*" },
+    { "source": "/brand-static/:path*", "destination": "https://mirra-brand-portal.vercel.app/brand-static/:path*" }
+  ]
+}

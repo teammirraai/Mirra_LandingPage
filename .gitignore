@@ -2,6 +2,11 @@ node_modules/
 server/node_modules/
 server/.env
 server/.env.local
+.env
+.env.local
+brand-portal/node_modules/
+brand-portal/.next/
+brand-portal/.env.local
 .DS_Store
 dist/
 *.log

@@ -1,5 +1,47 @@
 import Image from "next/image";
 
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.mirraai.stylist";
+const APP_STORE_URL =
+  "https://apps.apple.com/in/app/mirra-ai-shopping-assistant/id6781397977";
+
+function StoreBadge({
+  href,
+  src,
+  alt,
+  eyebrow,
+  label,
+}: {
+  href: string;
+  src: string;
+  alt: string;
+  eyebrow: string;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 rounded-full border border-surface/20 bg-surface/10 py-1.5 pr-4 pl-1.5 transition-colors hover:border-surface/40 sm:gap-2.5 sm:py-2 sm:pr-5 sm:pl-2"
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={80}
+        height={80}
+        className="h-7 w-7 shrink-0 rounded-full sm:h-9 sm:w-9"
+      />
+      <span className="flex flex-col leading-none">
+        <span className="text-[9px] text-surface/60 sm:text-[10px]">{eyebrow}</span>
+        <span className="text-[12px] font-semibold text-surface sm:text-sm">
+          {label}
+        </span>
+      </span>
+    </a>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="mt-auto bg-ink px-6 pt-16 pb-8 text-surface sm:px-10">
@@ -11,7 +53,24 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="mx-auto mt-16 max-w-7xl">
+      <div className="mx-auto mt-8 flex max-w-7xl items-center justify-center gap-3">
+        <StoreBadge
+          href={PLAY_STORE_URL}
+          src="/images/icon-google-play.png"
+          alt="Google Play"
+          eyebrow="Get it on"
+          label="Google Play"
+        />
+        <StoreBadge
+          href={APP_STORE_URL}
+          src="/images/icon-app-store.png"
+          alt="App Store"
+          eyebrow="Download on"
+          label="App Store"
+        />
+      </div>
+
+      <div className="mx-auto mt-10 max-w-7xl">
         <Image
           src="/images/LogoDarkBackground-cropped.png"
           alt="Mirra"

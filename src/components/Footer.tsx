@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="mt-auto bg-ink px-6 pt-16 pb-8 text-surface sm:px-10">
@@ -10,8 +12,14 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-16 max-w-7xl">
-        <p className="font-display text-xl">Meet Mirra.</p>
-        <p className="mt-1 text-sm text-surface/60">
+        <Image
+          src="/images/LogoDarkBackground-cropped.png"
+          alt="Mirra"
+          width={480}
+          height={172}
+          className="h-7 w-auto"
+        />
+        <p className="mt-2 text-sm text-surface/60">
           Your one search for women&rsquo;s fashion across every brand we carry.
         </p>
       </div>

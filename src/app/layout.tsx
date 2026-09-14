@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Mirra is a women-only fashion discovery platform. Search across thousands of products in ethnic wear, western wear, footwear, swimwear, loungewear and winterwear — all in one place.",
   icons: {
-    icon: "/favicon-dark.png",
+    icon: "/favicon.png",
   },
 };
 

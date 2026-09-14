@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mirra — Shop 10,000+ women's fashion brands in one place",
+  title: "Mirra",
   description:
     "Mirra is a women-only fashion discovery platform. Search across thousands of products in ethnic wear, western wear, footwear, swimwear, loungewear and winterwear — all in one place.",
 };

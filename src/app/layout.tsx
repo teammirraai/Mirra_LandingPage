@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   title: "Mirra",
   description:
     "Mirra is a women-only fashion discovery platform. Search across thousands of products in ethnic wear, western wear, footwear, swimwear, loungewear and winterwear — all in one place.",
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({

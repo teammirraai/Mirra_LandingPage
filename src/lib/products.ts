@@ -72,6 +72,22 @@ export async function getBlackShirts(limit = 6): Promise<Product[]> {
   return data ?? [];
 }
 
+export async function getCropTops(limit = 3): Promise<Product[]> {
+  if (!supabase) return [];
+  const { data, error } = await supabase
+    .from("unique_products")
+    .select(PRODUCT_COLUMNS)
+    .eq("sub_category", "Crop Top")
+    .not("image_url", "is", null)
+    .order("matched_query_count", { ascending: false, nullsFirst: false })
+    .limit(limit);
+  if (error) {
+    console.error("getCropTops", error.message);
+    return [];
+  }
+  return data ?? [];
+}
+
 // unique_products rows are clustered by brand in id order, so a single
 // limit()'d select only ever sees a couple of brands. Sample evenly spaced
 // windows across the whole id range instead, so a small number of rows

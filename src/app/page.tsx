@@ -11,18 +11,20 @@ import {
   getSubCategoryPreviews,
   getBrands,
   getBlackShirts,
+  getCropTops,
   isSupabaseConfigured,
 } from "@/lib/products";
 
 export const revalidate = 300;
 
 export default async function Home() {
-  const [featured, subCategoryPreviews, brands, blackShirts] =
+  const [featured, subCategoryPreviews, brands, blackShirts, cropTops] =
     await Promise.all([
       getFeaturedProducts(24),
       getSubCategoryPreviews(),
       getBrands(20),
       getBlackShirts(6),
+      getCropTops(3),
     ]);
 
   return (
@@ -36,7 +38,7 @@ export default async function Home() {
           </div>
         ) : null}
 
-        <Hero />
+        <Hero products={cropTops} />
         <CategoryRail previews={subCategoryPreviews} />
 
         <section className="py-10">

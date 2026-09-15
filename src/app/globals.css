@@ -168,6 +168,64 @@
   }
 }
 
+@keyframes fade-out-quick {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes button-activate {
+  from {
+    background-color: var(--ink-200);
+    color: var(--ink-500);
+  }
+  to {
+    background-color: #4d5a45;
+    color: #fff;
+  }
+}
+
+@keyframes rows-expand {
+  from {
+    grid-template-rows: 0fr;
+  }
+  to {
+    grid-template-rows: 1fr;
+  }
+}
+
+@keyframes rows-collapse {
+  from {
+    grid-template-rows: 1fr;
+  }
+  to {
+    grid-template-rows: 0fr;
+  }
+}
+
+@keyframes step-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  8%,
+  88% {
+    opacity: 1;
+  }
+}
+
+@keyframes bar-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes heart-pop {
   0% {
     transform: scale(0);
@@ -199,6 +257,53 @@
       steps(var(--typewriter-steps, 38), end) var(--typewriter-delay, 0s)
       forwards,
     caret-blink 0.8s step-end var(--typewriter-delay, 0s) infinite;
+}
+
+.placeholder-fade {
+  animation: fade-out-quick 0.15s ease-in var(--fade-delay, 0s) forwards;
+}
+
+.typewriter-input {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid currentColor;
+  width: 0;
+  animation:
+    typewriter var(--typewriter-duration, 2.4s)
+      steps(var(--typewriter-steps, 38), end) var(--typewriter-delay, 0s)
+      forwards,
+    caret-blink 0.8s step-end var(--typewriter-delay, 0s) infinite,
+    fade-out-quick 0.2s ease-in var(--clear-delay, 4s) forwards;
+}
+
+.send-activate {
+  animation: button-activate 0.3s ease-out var(--activate-delay, 0s) forwards;
+}
+
+.step-fade {
+  animation: step-fade var(--step-duration, 0.75s) ease-in-out
+    var(--step-delay, 0s) both;
+}
+
+.loading-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  animation:
+    rows-expand 0.25s ease-out var(--expand-delay, 0s) forwards,
+    rows-collapse 0.25s ease-in var(--collapse-delay, 4s) forwards;
+}
+
+.loading-collapse > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.bar-fill {
+  width: 0%;
+  animation: bar-fill var(--bar-duration, 0.75s) linear var(--bar-delay, 0s)
+    both;
 }
 
 .heart-pop {
@@ -246,6 +351,36 @@
     opacity: 1 !important;
     transform: none !important;
     border-right: none !important;
+  }
+  .step-fade:not(:last-child) {
+    display: none !important;
+  }
+  .step-fade:last-child {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .loading-collapse {
+    animation: none !important;
+    grid-template-rows: 1fr !important;
+  }
+  .bar-fill {
+    animation: none !important;
+    width: 100% !important;
+  }
+  .placeholder-fade {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .typewriter-input {
+    animation: none !important;
+    width: auto !important;
+    opacity: 0 !important;
+    border-right: none !important;
+  }
+  .send-activate {
+    animation: none !important;
+    background-color: #4d5a45 !important;
+    color: #fff !important;
   }
   .slider-dot {
     animation: none !important;

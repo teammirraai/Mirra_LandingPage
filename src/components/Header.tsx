@@ -58,10 +58,10 @@ export default function Header() {
           />
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <Link
             href="/blog"
-            className="hidden text-sm font-medium text-ink-700 hover:text-ink-900 sm:block"
+            className="whitespace-nowrap text-xs font-medium text-ink-700 hover:text-ink-900 sm:text-sm"
           >
             Blog
           </Link>

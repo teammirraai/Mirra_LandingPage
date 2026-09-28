@@ -53,6 +53,11 @@ export default async function Home() {
           </div>
         </section>
 
+        <p className="mx-auto max-w-2xl px-6 text-center text-lg text-ink-700 sm:px-10">
+          Mirra is an AI shopping assistant that helps you discover what to
+          buy based on your wardrobe and style.
+        </p>
+
         <About products={featured} blackShirts={blackShirts} />
         <FeatureBlocks />
         <BrandMarquee brands={brands} />

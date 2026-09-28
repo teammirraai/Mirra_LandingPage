@@ -5,6 +5,7 @@ import ProductRail from "@/components/ProductRail";
 import About from "@/components/About";
 import FeatureBlocks from "@/components/FeatureBlocks";
 import BrandMarquee from "@/components/BrandMarquee";
+import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import {
   getFeaturedProducts,
@@ -55,6 +56,7 @@ export default async function Home() {
         <About products={featured} blackShirts={blackShirts} />
         <FeatureBlocks />
         <BrandMarquee brands={brands} />
+        <Faq />
       </main>
       <Footer />
     </>

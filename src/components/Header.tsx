@@ -58,7 +58,13 @@ export default function Header() {
           />
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+          <Link
+            href="/blog"
+            className="hidden text-sm font-medium text-ink-700 hover:text-ink-900 sm:block"
+          >
+            Blog
+          </Link>
           <StoreBadge
             href={PLAY_STORE_URL}
             src="/images/icon-google-play.png"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.mirraai.stylist";
@@ -87,6 +88,9 @@ export default function Footer() {
         <a href="mailto:support.mirraai@gmail.com" className="hover:text-surface">
           support.mirraai@gmail.com
         </a>
+        <Link href="/blog" className="hover:text-surface">
+          Blog
+        </Link>
         <a
           href="https://askmirra.ai/privacy-policy.html"
           target="_blank"

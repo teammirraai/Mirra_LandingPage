@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CategoryRail from "@/components/CategoryRail";
@@ -17,6 +18,10 @@ import {
 } from "@/lib/products";
 
 export const revalidate = 300;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function Home() {
   const [featured, subCategoryPreviews, brands, blackShirts, cropTops] =

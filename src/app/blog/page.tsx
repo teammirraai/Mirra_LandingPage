@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Styling tips, product drops and updates from the Mirra team.",
+  alternates: { canonical: "/blog" },
 };
 
 function formatDate(date: string) {

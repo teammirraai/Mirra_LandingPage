@@ -108,6 +108,14 @@ export default function Footer() {
           Terms
         </a>
         <a
+          href="https://askmirra.ai/support.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-surface"
+        >
+          Support
+        </a>
+        <a
           href="https://askmirra.ai/delete-account.html"
           target="_blank"
           rel="noopener noreferrer"
